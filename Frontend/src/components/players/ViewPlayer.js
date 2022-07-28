@@ -5,10 +5,10 @@ import {getPlayers2} from '../../services/index'
 import Player from './Player'
 const ViewPlayer = () => {
   let {id } = useParams();
-  const [player, setData] = useState([]);
+  const [player, setPlayer] = useState([]);
   useEffect(() => {
     getPlayers2(id).then((res) => {
-      setData(res.data)
+      setPlayer(res.data)
     });
   }, []);
   

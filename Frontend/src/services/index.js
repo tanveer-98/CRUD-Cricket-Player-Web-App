@@ -14,16 +14,16 @@ export function deletePlayer(id) {
   return axios.delete(`${base}/players/${id}`);
 }
 
-export function createPlayer(data) {
-  return axios.post(`${base}/players`, data, {
+export function createPlayer(player) {
+  return axios.post(`${base}/players`, player, {
     headers: {
       "Content-Type": "application/json",
     },
   });
 }
 
-export function editPlayer(id, data) {
-  return axios.patch(`${base}/players/${id}`, data, {
+export function editPlayer(id, player) {
+  return axios.patch(`${base}/players/${id}`, player, {
     headers: {
       "Content-Type": "application/json",
     },

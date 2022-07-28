@@ -24,7 +24,8 @@ export default class AppNavbar extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
-      modal : false
+      modal : false,
+    
     };
   }
   toggle() {
@@ -34,10 +35,9 @@ export default class AppNavbar extends React.Component {
   }
 
   toggleCreatePlayerModal(){
-    this.setState({ modal:true});
+    this.setState({ modal:!this.state.modal});
     this.toggle();
   }
-
   render() {
     return (
       <div>
@@ -60,11 +60,11 @@ export default class AppNavbar extends React.Component {
             </Nav>
           </Collapse>
           <Modal isOpen = {this.state.modal} toggle = {this.toggleCreatePlayerModal}>
-              <ModalHeader> Add Player Modal</ModalHeader>
+              <ModalHeader> ADD PLAYER</ModalHeader>
               <ModalBody><CreatePlayer/></ModalBody>
           </Modal>
+       
         </Navbar>
-
       </div>
     );
   }
